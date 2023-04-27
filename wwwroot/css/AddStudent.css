@@ -1,0 +1,74 @@
+﻿body {
+    background-color: #eee;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+.Add-Student {
+    font-weight: 300;
+    padding-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 3000px;
+    height: 650px;
+    border-radius: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.image-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    background-image: url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 500px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.register {
+    padding-top: 50px;
+}
+
+.checkbox {
+    display: flex;
+    gap: 1rem;
+    flex-wrap:wrap;
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100px;
+}

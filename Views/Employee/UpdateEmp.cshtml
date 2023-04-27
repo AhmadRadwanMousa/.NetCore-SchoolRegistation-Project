@@ -1,0 +1,98 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model SchoolRegistration.Models.EmployeeModel
+
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/AddEmployeePage.css" />;
+</head>
+<body>
+
+    <div class="container main-holder">
+        <div class="row">
+            <div class="col-sm-6 image"
+                 style="padding-left: 0px; padding-right: 0px">
+                <div class="img-fluid image-holder"></div>
+            </div>
+            <div class="col-sm-6 register">
+                <form class="emp-form" asp-action="Update">
+                    <div class="Text">Update Employee Information</div>
+                    <div class="first-sec">
+                        <div class="form-outline">
+                            <input type="text"
+                                   id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="First name"
+                                   required
+                                   asp-for="FirstName" />
+                        </div>
+                        <div class="form-outline">
+                            <input type="text"
+                                   id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="Last name"
+                                   required
+                                   asp-for="LastName" />
+                        </div>
+                    </div>
+                    <div class="first-sec">
+                        <div class="form-outline">
+                            <input id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="Age"
+                                   asp-for="Age" />
+                        </div>
+                        <div class="form-outline">
+                            <input id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="Salary"
+                                   required
+                                   asp-for="Salary" />
+                        </div>
+                    </div>
+                    <div class="second-sec">
+                        <div class="form-outline">
+                            <input type="text"
+                                   id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="Phone Number"
+                                   required
+                                   asp-for="PhoneNumber" />
+                        </div>
+                        <div class="form-outline">
+                            <input type="text"
+                                   id="form3Example1m"
+                                   class="form-control form-control-sm"
+                                   placeholder="Qualification"
+                                   required asp-for="Qualification" />
+                        </div>
+                        <div class="">
+                            <select class="form-select" aria-label="Default select example"
+                                    asp-for="CatagoryID" asp-items="@(new SelectList(ViewBag.Category,"CatagoryId","CatagoryName"))">
+                                <option>Job Title</option>
+                            </select>
+                        </div>
+                        <div class="sm-form sm-outline input-with-post-icon datepicker">
+                            <label for="startDate" id="l1">Join Date</label>
+                            <input class="form-control" type="date" required asp-for="JoinDate" />
+                        </div>
+                        <input asp-for="EmployeeID" type="hidden" />
+                    </div>
+                    <div class="submit-button">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

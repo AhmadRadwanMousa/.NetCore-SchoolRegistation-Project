@@ -1,0 +1,111 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SchoolRegistration.Models.StudentModel
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="~/css/AddStudent.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row main">
+                <div class="col-md-5 register">
+                    <div class="Add-Student">Add Student Form</div>
+                    <form class="register-form" asp-action="EditStudent">
+                        <div class="form-holder">
+                            <div class="form-outline">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Student Name"
+                                       required
+                                       asp-for="StudentName" />
+
+                            </div>
+                            <div class="form-outline">
+                                <input class="form-control"
+                                       placeholder="Student Age"
+                                       required
+                                       asp-for="StudentAge" />
+                            </div>
+                            <div class="form-outline">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Mobile Number"
+                                       asp-for="FatherMobile" />
+                            </div>
+
+                            <div class="form-outline">
+                                <input class="form-control"
+                                       placeholder="Medical Issues"
+                                     
+                                       asp-for="MedicalIssues" />
+                            </div>
+
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">$</span>
+                                <input class="form-control"
+                                       placeholder="Discount"
+                                    
+                                       asp-for="Discount" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <select class="form-select" asp-for="ClassID" asp-items="@(new SelectList(ViewBag.Data, "ClassId", "ClassNumber"))">
+                                    <option>Choose...</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="SubjectID" asp-for="SubjectId" />
+                            <input type="hidden" id="StudentID" asp-for="StudentID" />
+                            <div class="checkbox">
+
+                                @foreach (var item in Model.SubjectList)
+                                {
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               value="@item.Name"
+                                               id="@item.ID"
+                                               onclick="{Test(@item.ID)}"
+                                               checked="@item.IsChecked" />
+                                        <label class="form-check-label" for="flexSwitchCheckChecked">
+                                            @item.Name
+                                        </label>
+                                    </div>
+                                }
+
+                            </div>
+                            <div class="button">
+                                <button type="submit" class="btn btn-outline-primary">
+                                Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-6 image-holder">
+                    <div class="image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Test(ID) {
+            document.getElementById("SubjectID").value = ID;
+
+        }
+    </script>
+
+</body>
+</html>
